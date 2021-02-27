@@ -2,17 +2,17 @@
 
 # User Defined Stuff
 
-folder=""
-rom_name=""*.zip
+folder="/home/violet/joker/sos"
+rom_name=*OFFICIAL*.zip
 gapps_command="WITH_GAPPS"
 with_gapps="no"
 build_type="userdebug"
-device_codename=""
-use_brunch=""
+device_codename="violet"
+use_brunch="bacon"
 OUT_PATH="$folder/out/target/product/${device_codename}"
-lunch=""
-user=""
-tg_username="@"
+lunch="superior"
+user="Joker"
+tg_username="@Joker_V2_0"
 use_ccache=yes
 stopped=0
 finish=0
@@ -79,8 +79,7 @@ ccache -M 75G
 # Time to build
 
 source build/envsetup.sh
-export SELINUX_IGNORE_NEVERALLOWS=true
-export SKIP_ABI_CHECKS=true
+export SUPERIOR_OFFICIAL=true
 
 if [ "$with_gapps" = "yes" ];
 then
@@ -127,7 +126,7 @@ fi
 
 if [ "$use_brunch" = "bacon" ];
 then
-mka  bacon -j$(nproc --all) 
+make bacon
 fi
 
 END=$(date +%s)
